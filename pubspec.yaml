@@ -10,7 +10,7 @@ dependencies:
   flutter:
     sdk: flutter
   geolocator: ^8.0.0
-  permission_handler: ^8.3.0
+  permission_handler: any
 
   cupertino_icons: ^0.1.2
 

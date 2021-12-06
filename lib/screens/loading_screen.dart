@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
+import 'package:permission_handler/permission_handler.dart';
 // import 'package:permission_handler/permission_handler.dart';
 
 class LoadingScreen extends StatefulWidget {
@@ -15,6 +16,22 @@ class _LoadingScreenState extends State<LoadingScreen> {
     print(position);
   }
 
+  getUserPermissions() async {
+    // Map<Permission, PermissionStatus> permissions =
+    // await PermissionHandler().requestPermissions([Permission.storage , Permission.microphone]);
+    Map<Permission, PermissionStatus> permissions =
+    await [Permission.location].request();
+
+    print("permission");
+    print(permissions);
+    // }
+  }
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    getUserPermissions();
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
